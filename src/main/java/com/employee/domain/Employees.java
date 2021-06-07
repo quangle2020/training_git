@@ -38,6 +38,7 @@ public class Employees {
     @Column(name = "adress")
     private String adress;
 
+    // Đặt tên có dấu cách như này ko lỗi à ?
     @Column(name = " salary")
     private BigDecimal salary;
 
