@@ -9,6 +9,7 @@ import java.util.List;
 
 public class EmployeeMapperManual  {
 
+    // dùng foreach đi, check null, rỗng trước khi sử dụng , dùng Collectutils.isEmpty
     public List<EmployeeDTO> toDTO(List<Employees> empList) {
         List<EmployeeDTO> dtoList = new ArrayList<>();
         for (Employees emp : empList){
@@ -24,6 +25,8 @@ public class EmployeeMapperManual  {
         }
             return dtoList;
     }
+    
+    // Tương tự phần trên
      public List<EmployeeDTO> toDto(List<Employees> employees){
         List<EmployeeDTO> listEmpDTO = new ArrayList<>();
         for (Employees employee:employees){
@@ -34,6 +37,9 @@ public class EmployeeMapperManual  {
         return listEmpDTO;
      }
 
+    
+    // check null
+    // if(Objects.isEmpty()) return null;
      public EmployeeDTO toDTO(Employees emp){
         EmployeeDTO empDTO = new EmployeeDTO();
          empDTO.setId(emp.getId());
