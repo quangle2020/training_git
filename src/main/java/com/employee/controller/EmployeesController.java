@@ -37,6 +37,7 @@ public class EmployeesController {
             service.delete(ids);
         }
 
+    // Để là POST method nhé, ko thì để là request param, chạy postman vẫn ok, nhưng mà lên FE nó ko chạy đc.
      @GetMapping(value = "/search",consumes = MediaType.APPLICATION_JSON_VALUE,
      produces = MediaType.APPLICATION_JSON_VALUE)
     public EmployeesSearchOutput search(@RequestBody EmployeesSearchInput input){
