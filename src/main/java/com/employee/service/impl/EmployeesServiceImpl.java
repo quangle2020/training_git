@@ -42,6 +42,7 @@ public class EmployeesServiceImpl implements EmployeesService {
         return mapperManual.toDTO(repository.save(employees));
     }
 
+    // sao cứ thích dùng for thế nhỉ ??? lên đọc stream java 8 đi
     @Override
     public void delete(Long[] id) {
         for (long ids : id) {
@@ -72,6 +73,9 @@ public class EmployeesServiceImpl implements EmployeesService {
             specAgeTo = buiderSpec("age", "<=", empInput.getAgeTo().toString());
         if (StringUtils.isNotBlank(empInput.getPosition()))
             specPosition = buiderSpec("position", "=", empInput.getPosition());
+        
+        // Convert ra Date, trùng kiểu vs kiểu mà khai báo trong entity thì sẽ tìm kiếm đc.
+        
        // if (empInput.getStartDateFrom() != null)
       //      specStartDateFrom = buiderSpec("startDate", "<=", empInput.getStartDateFrom().toString());
       //  if (empInput.getStartDateFrom() != null)
